@@ -1,0 +1,382 @@
+/* ==========================================
+   기본 초기화 및 글로벌 스타일
+   ========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', 'Noto Sans KR', sans-serif; 
+    background-color: #f8f7f4; 
+    color: #333; 
+    line-height: 1.7; 
+    /* -webkit-font-smoothing: 브라우저 글꼴의 외곽선을 부드럽게 만드는 속성 */
+    -webkit-font-smoothing: antialiased;
+    /* overflow-x: 가로 방향으로 요소가 넘칠 때 제어하는 속성 */
+    overflow-x: hidden;
+}
+
+/* ==========================================
+   네비게이션 및 상단 영역
+   ========================================== */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px; 
+    background-color: #ffffff;
+    border-bottom: none;
+    position: relative;
+}
+
+.logo {
+    color: #333; 
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    font-size: 1.05rem;
+    cursor: pointer;
+}
+
+.nav-brand {
+    font-family: 'Inter', serif;
+    font-size: 1.2rem;
+    letter-spacing: 0.2em;
+    color: #333;
+    text-decoration: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.menu-item {
+    text-decoration: none;
+    color: #333;
+    margin-left: 30px;
+    font-size: 0.9rem;
+    padding-bottom: 4px;
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.menu-item:hover {
+    color: #000;
+    border-bottom-color: #000; /* 진한 호버 밑줄 */
+}
+
+
+.nav-menu a {
+    text-decoration: none;
+    color: #333; 
+    margin-left: 30px; 
+    font-size: 0.9rem; 
+    padding-bottom: 4px;
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.nav-menu a:hover {
+    color: #000;
+    border-bottom-color: #000;
+}
+
+.sidebar-menu {
+    position: fixed;
+    top: 0;
+    left: -300px; /* 숨김 */
+    width: 300px;
+    height: 100vh;
+    background-color: #fff;
+    padding-top: 100px;
+    transition: 0.4s ease-in-out;
+    z-index: 200;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+}
+
+.sidebar-menu a {
+    display: block;
+    padding: 15px 40px;
+    color: #333;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.category-title {
+    padding: 20px 40px;
+    font-weight: bold;
+    color: #b59d7b;
+    font-size: 0.8rem;
+}
+
+.sidebar-menu a:hover {
+    color: #000;
+    border-bottom-color: #000;
+}
+
+.sidebar-menu.open {
+    left: 0; /* 노출 */
+}
+
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2); /* 살짝 어두운 배경 (투명도 조절 가능) */
+    z-index: 150; /* 사이드바(200)보다는 낮고, 본문보다는 높게 */
+    display: none; /* 평소에는 안 보임 */
+    cursor: pointer;
+}
+
+/* 2. 사이드바가 열렸을 때 오버레이도 같이 표시 */
+.sidebar-overlay.active {
+    display: block;
+}
+
+/* ==========================================
+   배너 및 메인 타이틀 
+   ========================================== */
+
+.brand-banner {
+    width: 100%;
+    height: 300px;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url('');
+    background-size: cover;
+    background-position: center;
+    background-color: #eae3db;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+}
+
+.subtitle-tag {
+    font-size: 0.6rem;
+    letter-spacing: 0.4em;
+    color: #b59d7b; 
+    margin-bottom: 5px;
+}
+
+.main-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem; 
+    font-weight: 400;
+    margin-bottom: 10px; 
+    color: #333; 
+}
+
+.banner-desc {
+    font-size: 0.8rem;
+    color: #666; 
+    max-width: 550px;
+    /* word-break: 텍스트 줄바꿈 방식을 결정하는 속성 */
+    word-break: keep-all;
+}
+
+/* ==========================================
+   소개글 및 갤러리 헤더 
+   ========================================== */
+
+.story-section {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 80px 50px; 
+}
+
+.section-tag {
+    font-family: 'Inter', 'Noto Sans KR', sans-serif; 
+    font-size: 0.75rem;                              
+    letter-spacing: 0.1em;                           
+    color: #999; 
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 2rem; 
+    text-align: center;
+    font-weight: 400;
+    margin-bottom: 60px; 
+    color: #1a1a1a; 
+}
+
+/* ==========================================
+   브랜드 카드 그리드 래퍼 
+   ========================================== */
+
+.catalog-section {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 80px 40px 140px 40px;
+}
+
+.brand-grid {
+    display: flex;
+    justify-content: center; 
+    flex-wrap: wrap; 
+    gap: 60px 40px;
+}
+
+/* ==========================================
+   개별 브랜드 카드 디자인 및 효과 
+   ========================================== */
+
+.brand-card {
+    background-color: #ffffff; 
+    /* calc(): CSS 내부에서 사칙연산(%, px 혼합)을 수행하는 계산 함수 */
+    width: calc(25% - 30px);
+    min-width: 280px;         
+    display: flex;
+    flex-direction: column;
+    border-radius: 6px;
+    /* box-shadow: 박스 요소 자체에 그림자 효과를 부여 */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02); 
+    /* overflow(: hidden): 자식 요소가 부모 영역을 벗어날 때 숨겨주는 속성 */
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease;
+}
+
+.brand-card:hover {
+    transform: translateY(-8px);
+    /* transform{: translateY()}: 요소를 수직(Y축) 방향으로 이동시키는 효과 */
+    box-shadow: 0 20px 38px rgba(0, 0, 0, 0.04);
+}
+
+/* ==========================================
+   상품 이미지 박스 스타일 
+   ========================================== */
+
+.product-img-box {
+    position: relative;
+    width: 100%;
+    /* aspect-ratio: 종횡비(가로/세로 비율)를 고정하는 최신 CSS 속성 */
+    aspect-ratio: 4 / 5; 
+    overflow: hidden;
+    background-color: #f3f2ee;
+}
+
+.product-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: block;
+    transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.brand-card:hover .product-img-box img {
+    /* transform: scale(): 요소의 크기를 배율로 확대하거나 축소시키는 효과 */
+    transform: scale(1.04);
+}
+
+/* ==========================================
+   카드 텍스트 및 버튼 스타일 
+   ========================================== */
+
+.card-info {
+    padding: 32px 28px; 
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    /* flex-grow: 플렉스 컨테이너 내부에서 남는 여백 공간을 채우는 비율을 결정 */
+    flex-grow: 1; 
+}
+
+.card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: -2px;
+}
+
+.brand-location {
+    font-size: 0.7rem; 
+    letter-spacing: 0.15em;
+    color: #a3a3a3;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.brand-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    color: #111;
+    font-weight: 400;
+    line-height: 1.25;
+    margin: 0; 
+}
+
+.brand-intro {
+    font-size: 0.85rem;
+    color: #767676;
+    line-height: 1.7; 
+    word-break: keep-all;
+    margin-top: -2px;
+    margin-bottom: 16px; 
+}
+
+.explore-btn {
+    display: inline-block;
+    /* align-self: 플렉스 컨테이너 안에서 부모의 align-items를 무시하고 해당 아이템만 개별적으로 수직 정렬 */
+    align-self: flex-start;
+    margin-top: auto; 
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-decoration: none;
+    color: #111;
+    font-weight: 600;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #111; 
+    transition: color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+
+.explore-btn:hover {
+    color: #B8A18B;
+    border-bottom-color: #B8A18B;
+    transform: translateX(3px); 
+}
+
+/* ==========================================
+   화면 크기별 레이아웃 최적화 
+   ========================================== */
+
+@media (max-width: 1200px) {
+    .brand-grid {
+        gap: 40px 24px;
+    }
+    .brand-card {
+        width: calc(33.33% - 16px); 
+    }
+}
+
+@media (max-width: 900px) {
+    .brand-grid {
+        gap: 40px 20px;
+    }
+    .brand-card {
+        width: calc(50% - 10px); 
+    }
+    .card-info {
+        padding: 24px 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .catalog-section {
+        padding: 40px 20px 80px 20px;
+    }
+    .brand-grid {
+        gap: 48px 0;
+    }
+    .brand-card {
+        width: 100%; 
+    }
+}

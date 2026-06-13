@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Halcyon | HALCYON</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/about.css">
+</head>
+<body>
+    <div class="sidebar-overlay"></div>
+
+    <header class="navigator">
+        <a class="logo-link">☰</a>
+        <a href="../Main Page/main.html" class="nav-brand">HALCYON</a>
+        <nav class="menu">
+            <a href="../Brand page/brand.html" class="menu-item">Brand</a>
+            <a href="../Layering page/layering.html" class="menu-item">Layering</a>
+            <a href="./about.html" class="menu-item">About</a>
+        </nav>
+    </header>
+
+    <nav class="sidebar-menu">
+        <a href="../Brand page/brand.html">Brand</a>
+        <a href="../Layering page/layering.html">Layering</a>
+        <a href="../About page/about.html">About</a>
+        <hr>
+        <div class="category-title">Fragrance Categories</div>
+        <a href="../Sub-Fragrance/Sub-fragrance-ALL/sub-all.html">Fragrance</a>
+        <a href="../Sub-Formulation/Sub-formulation-ALL/sub-all.html">Formulation</a>
+        <a href="../Sub-Price/Sub-price-ALL Page/sub-price-all.html">Price Range</a>
+    </nav>
+
+    <section class="about-hero-banner">
+        <div class="banner-content">
+            <p class="banner-sub">DIRECTORY</p>
+            <h1 class="banner-title">About Halcyon</h1>
+            <p class="banner-desc">우리는 전 세계의 독창적인 서사를 가진 향수들을 선별하여 제안합니다.</p>
+        </div>
+    </section>
+
+    <section class="how-to-section">
+        <h2 class="how-to-title">How to Scent-Log</h2>
+        <p class="how-to-sub">가장 완벽한 향기를 만나는 세 가지 단계</p>
+
+        <div class="step-container">
+            
+            <div class="step-card">
+                <span class="step-number">01</span>
+                <h3 class="step-card-title">Explore Directory</h3>
+                <p class="step-card-text">
+                    Scent-Log가 엄선한 전 세계 니치 향수 브랜드들의 아카이브를 탐색하세요. 각 브랜드가 가진 고유한 철학을 먼저 읽어보는 것을 추천합니다.
+                </p>
+            </div>
+
+            <div class="step-card">
+                <span class="step-number">02</span>
+                <h3 class="step-card-title">Curated Search</h3>
+                <p class="step-card-text">
+                    기분, 계절, 선호하는 노트(Note)를 기반으로 세분화된 필터를 사용해 보세요. 당신의 현재 무드에 가장 어울리는 향기를 큐레이션 해드립니다.
+                </p>
+            </div>
+
+            <div class="step-card">
+                <span class="step-number">03</span>
+                <h3 class="step-card-title">Archive Your Scent</h3>
+                <p class="step-card-text">
+                    마음에 드는 향기를 찾으셨다면 브랜드의 오피셜 페이지로 이동하여 깊이 있는 정보를 확인하고, 당신만의 향기 로그(Log)를 완성하세요.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="essence-section">
+        <div class="essence-container">
+            
+            <div class="essence-text-box">
+                <p class="essence-tag">THE ESSENCE</p>
+                <h2 class="essence-title">Halcyon</h2>
+                
+                <p class="essence-paragraph">
+                    Halcyon은 수많은 향수 브랜드들 사이에서 길을 잃은 당신을 위해 탄생했습니다. 우리는 단순한 '상품'이 아닌, 각 조향사가 담아낸 '서사'와 '예술성'을 기준으로 브랜드를 선별합니다.
+                </p>
+                <p class="essence-paragraph">
+                    당신의 오늘이 어떤 온도로 기억되길 원하시나요? Halcyon의 정교한 필터와 큐레이션을 통해 나만의 시그니처 분위기를 발견해 보세요.
+                </p>
+            </div>
+
+            <div class="essence-img-box">
+                <img src="./image/04711f08cb371738fc5c8d9b6f11442d.jpg" alt="Scent Essence Sculpture" onerror="this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600'">
+            </div>
+
+        </div>
+    </section>
+
+    <section class="quote-section">
+        <div class="quote-container">
+            <span class="quote-mark">“</span>
+            <blockquote class="quote-text">
+                "A woman's perfume tells more about her than her handwriting."
+            </blockquote>
+            <cite class="quote-author">— CHRISTIAN DIOR</cite>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p class="footer-text">© 2026 Halcyon. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const logoBtn = document.querySelector('.logo-link');
+        const sidebar = document.querySelector('.sidebar-menu');
+        const overlay = document.querySelector('.sidebar-overlay');
+
+        // 사이드바와 오버레이를 열고 닫는 함수
+        function toggleSidebar(open) {
+            if (open) {
+                sidebar.classList.add('open');
+                overlay.style.display = 'block'; // 오버레이 표시
+            } else {
+                sidebar.classList.remove('open');
+                overlay.style.display = 'none';  // 오버레이 숨김
+            }
+        }
+
+        // 로고 클릭 시
+        logoBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            // 현재 상태 확인 후 반대로 변경
+            const isOpen = sidebar.classList.contains('open');
+            toggleSidebar(!isOpen);
+        });
+
+        // 오버레이 클릭 시
+        if (overlay) {
+            overlay.addEventListener('click', () => {
+                toggleSidebar(false); // 무조건 닫기
+            });
+        }
+        
+    </script>
+
+</body>
+</html>

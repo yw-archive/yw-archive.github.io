@@ -1,0 +1,192 @@
+/* 1. 기본 설정 및 배경*/
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8f7f4; /* 부드러운 오프화이트 배경 */
+    color: #333;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+  }
+
+/* 2. 상단 네비게이션 (양 끝 정렬)*/
+.navigator {
+    display: flex;
+    justify-content: space-between; /* 양 끝 정렬 */
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #fff;
+}
+.navigator a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+}
+
+/* 아이콘 크기만 살짝 키워주는 센스 */
+.navigation-logo {
+    font-size: 1.05rem;
+    cursor: pointer;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #333;
+    margin-left: 30px;
+    font-size: 0.9rem;
+    padding-bottom: 4px;
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s ease;
+}
+.menu a:hover {
+    color: #000;
+    border-bottom-color: #000; /* 진한 호버 밑줄 */
+}
+
+.sidebar-menu {
+        position: fixed;
+        top: 0;
+        left: -300px; /* 숨김 */
+        width: 300px;
+        height: 100vh;
+        background-color: #fff;
+        padding-top: 100px;
+        transition: 0.4s ease-in-out;
+        z-index: 200;
+        box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+    }
+
+.sidebar-menu a {
+        display: block;
+        padding: 15px 40px;
+        color: #333;
+        text-decoration: none;
+        font-size: 0.9rem;
+    }
+
+.category-title {
+        padding: 20px 40px;
+        font-weight: bold;
+        color: #b59d7b;
+        font-size: 0.8rem;
+    }
+
+.sidebar-menu a:hover {
+        color: #000;
+        border-bottom-color: #000;
+    }
+
+.sidebar-menu.open {
+        left: 0; /* 노출 */
+    }
+
+.sidebar-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.2); /* 살짝 어두운 배경 (투명도 조절 가능) */
+        z-index: 150; /* 사이드바(200)보다는 낮고, 본문보다는 높게 */
+        display: none; /* 평소에는 안 보임 */
+        cursor: pointer;
+    }
+
+/* 2. 사이드바가 열렸을 때 오버레이도 같이 표시 */
+.sidebar-overlay.active {
+        display: block;
+    }
+
+/* 3. 메인 로고 및 타이틀 섹션 (중앙 정렬) */
+.main-logo {
+    text-align: center;
+    padding: 60px 20px;
+}
+.main-logo .page-title a {
+    color: inherit;
+    text-decoration: none;
+}
+.page-title {
+    font-family: 'Playfair Display', serif; /* 세리프 폰트 적용 */
+    font-size: 5rem;
+    font-weight: 400;
+    margin: 0;
+    letter-spacing: 0.05em;
+    font-weight: bold;
+}
+.subtitle {
+    font-size: 0.8rem;
+    color: #555;
+    margin-top: 10px;
+    letter-spacing: 0.2em;
+}
+/* 4. 배너 이미지 (필터 그리드) */
+.banner {
+    width: 100%;
+    margin: 50px 0;
+}
+.main-banner {
+    display: block;
+    margin: 0 auto;
+    width: 90%;
+    max-width: 1400px;
+    max-height: 200px;
+    height:auto;
+    object-fit: cover;
+}
+/* 5. 큐레이션 랩 (필터 그리드) */
+.main-filter-title {
+    margin-top: 80px;
+    text-align: center;
+}
+.curation-lab {
+    font-family: 'playfair display', serif;
+    font-size: 1.8rem;
+}
+.sub-curation {
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    color: #aaa;
+    text-transform: uppercase;
+}
+
+/* 필터 가로 배령 */
+.filter-grid {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    margin-top: 40px;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.filter-fragrance, .filter-formulation, .filter-price {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.filter-fragrance, .filter-formulation, .filter-price {
+    font-size: 0.8rem;
+    color: #b59d7b;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+.filter-grid a {
+    text-decoration: none;
+    color: #333;
+    font-size: 0.9rem;
+    border-bottom: 1px solid transparent;
+    transition: 0.3s;
+}
+.filter-grid a:hover {
+    border-bottom: 1px solid #333;
+}
+
+/* 6. 푸터 */
+.footer {
+    text-align: center;
+    padding: 50px 0;
+    font-size: 0.7rem;
+    color: #ccc;
+}

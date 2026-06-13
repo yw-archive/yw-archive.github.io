@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>HALCYON | Recording memories as scent</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- 세리프와 산세리프 폰트 로드 (Playfair Display & Inter) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <!--css 링크 연결-->
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body class="min-h-screen">
+    <div class="sidebar-overlay"></div>
+
+    <!-- 상단 네비게이션 바 -->
+    <header class="navigator">
+            <a class="navigation-logo">☰</a>
+        <nav class="menu">
+            <a href="../Brand page/brand.html" class="brand">Brand</a>
+            <a href="../Layering page/layering.html" class="layering">Layering</a>
+            <a href="../About page/about.html" class="about">About</a>
+        </nav>
+    </header>
+
+    <nav class="sidebar-menu">
+        <a href="../Brand page/brand.html">Brand</a>
+        <a href="../Layering page/layering.html">Layering</a>
+        <a href="../About page/about.html">About</a>
+        <hr>
+        <div class="category-title">Fragrance Categories</div>
+        <a href="../Sub-Fragrance/Sub-fragrance-ALL/sub-all.html">Scent Types</a>
+        <a href="../Sub-Formulation/Sub-formulation-ALL/sub-all.html">Formulation</a>
+        <a href="../Sub-Price/Sub-price-ALL Page/sub-price-all.html">Price Range</a>
+    </nav>
+
+    <!-- 메인 히어로 섹션 -->
+    <main class="main-logo">
+        <h1 class="page-title">
+            <a href="./main.html">HALCYON</a>
+        </h1>
+        <p class="subtitle">
+            Recording the most brilliant memories as scent.
+        </p>
+
+        <!-- 배너 이미지 영역 -->
+        <div class="banner">
+            <!-- 요청하신 대로 "Main.jpg"를 참조합니다. -->
+            <img 
+                src="./img/435b0fff90f6b84d0497080760b5d8c9.jpg" 
+                alt="Main Banner - Ocean Waves" 
+                class="main-banner"
+            >
+        </div>
+
+        <!-- 큐레이션 랩 섹션 -->
+        <section class="main-filter-title">
+            <h2 class="curation-lab">Curation Lab</h2>
+            <p class="sub-curation">
+                A personal selection for your atmosphere
+            </p>
+
+            <!-- 필터 그리드 -->
+            <div class="filter-grid">
+                
+                <!-- 필터 1: Fragrance Family -->
+                <div class="filter-fragrance">
+                    <span class="fragrance">Fragrance</span><br>
+                    <a href="../Sub-Fragrance/Sub-fragrance-ALL/sub-all.html" class="filter-fragrance-link">
+                        Scent Types
+                    </a>
+                </div>
+
+                <!-- 필터 2: Formulation -->
+                <div class="filter-formulation">
+                    <span class="formulation">Formulation</span><br>
+                    <a href="../Sub-Formulation/Sub-formulation-ALL/sub-all.html" class="filter-formulation-link">
+                        All Types
+                    </a>
+                </div>
+
+                <!-- 필터 3: Price Range -->
+                <div class="filter-price">
+                    <span class="price-range">Price Range</span><br>
+                    <a href="../Sub-Price/Sub-price-ALL Page/sub-price-all.html" class="filter-price-link">
+                        Any Price
+                    </a>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p class="footer-text">© 2026 Halcyon. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const logoBtn = document.querySelector('.navigation-logo');
+        const sidebar = document.querySelector('.sidebar-menu');
+        const overlay = document.querySelector('.sidebar-overlay');
+
+        // 사이드바와 오버레이를 열고 닫는 함수
+        function toggleSidebar(open) {
+            if (open) {
+                sidebar.classList.add('open');
+                overlay.style.display = 'block'; // 오버레이 표시
+            } else {
+                sidebar.classList.remove('open');
+                overlay.style.display = 'none';  // 오버레이 숨김
+            }
+        }
+
+        // 로고 클릭 시
+        logoBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            // 현재 상태 확인 후 반대로 변경
+            const isOpen = sidebar.classList.contains('open');
+            toggleSidebar(!isOpen);
+        });
+
+        // 오버레이 클릭 시
+        if (overlay) {
+            overlay.addEventListener('click', () => {
+                toggleSidebar(false); // 무조건 닫기
+            });
+        }
+        
+    </script>
+
+</body>
+</html>

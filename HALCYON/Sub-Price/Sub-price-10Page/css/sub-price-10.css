@@ -1,0 +1,327 @@
+/* 기본 초기화 */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f8f7f4; /* 은은한 크림색 바탕 */
+    color: #333;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+}
+
+/* ==========================================
+   상단 네비게이션 (메인 페이지와 통일)
+========================================== */
+.navigator {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #fff; /* 네비바 구분을 위해 흰색 지정 */
+    position: relative;
+}
+
+.logo-link {
+    font-size: 1.05rem;
+    cursor: pointer;
+}
+
+.logo-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+}
+
+.nav-brand {
+    font-family: 'Inter', serif;
+    font-size: 1.2rem;
+    letter-spacing: 0.2em;
+    color: #333;
+    text-decoration: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.menu-item {
+    text-decoration: none;
+    color: #333;
+    margin-left: 30px;
+    font-size: 0.9rem;
+    padding-bottom: 4px;
+    border-bottom: 3px solid transparent; /* 기본 투명 밑줄 */
+    transition: all 0.2s ease;
+}
+
+.menu-item:hover {
+    color: #000;
+    border-bottom-color: #000; /* 호버 시 진한 밑줄 등장 */
+}
+
+.sidebar-menu {
+    position: fixed;
+    top: 0;
+    left: -300px; /* 숨김 */
+    width: 300px;
+    height: 100vh;
+    background-color: #fff;
+    padding-top: 100px;
+    transition: 0.4s ease-in-out;
+    z-index: 200;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+}
+
+.sidebar-menu a {
+    display: block;
+    padding: 15px 40px;
+    color: #333;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.category-title {
+    padding: 20px 40px;
+    font-weight: bold;
+    color: #b59d7b;
+    font-size: 0.8rem;
+}
+
+.sidebar-menu a:hover {
+    color: #000;
+    border-bottom-color: #000;
+}
+
+.sidebar-menu.open {
+    left: 0; /* 노출 */
+}
+
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2); /* 살짝 어두운 배경 (투명도 조절 가능) */
+    z-index: 150; /* 사이드바(200)보다는 낮고, 본문보다는 높게 */
+    display: none; /* 평소에는 안 보임 */
+    cursor: pointer;
+}
+
+/* 2. 사이드바가 열렸을 때 오버레이도 같이 표시 */
+.sidebar-overlay.active {
+    display: block;
+}
+
+/* ==========================================
+   히어로 대형 배너 영역
+========================================== */
+.sub-hero-banner {
+    width: 100%;
+    height: 280px;
+    /* 대리석 패턴 배경 이미지를 넣으시려면 아래 url 속성에 넣으세요 */
+    background-color: #eae3db; 
+    background-image: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)), url('../img/Sub.jpg'); 
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-top-text {
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    color: #8c8c8c;
+    margin-bottom: 8px;
+}
+
+.hero-main-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-style: italic;
+    font-weight: 400;
+    margin: 0 0 15px 0;
+}
+
+.hero-description {
+    font-size: 0.8rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+    word-break: keep-all; /* 한글 단어 깨짐 방지 */
+}
+
+
+/* ==========================================
+   바이브 필터 버튼 영역
+========================================== */
+.vibe-filter-section {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
+
+.vibe-title {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.4rem;
+    margin-bottom: 25px;
+}
+
+.vibe-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.vibe-btn {
+    text-decoration: none;
+    font-size: 0.75rem;
+    color: #555;
+    background-color: #fff;
+    padding: 8px 22px;
+    border: 1px solid #ddd;
+    border-radius: 30px; /* 타원형 둥근 모양 버튼 */
+    letter-spacing: 0.05em;
+    transition: all 0.2s ease;
+}
+
+/* 활성화 상태 (ALL 버튼처럼 검은 배경) */
+.vibe-btn.active, .vibe-btn:hover {
+    background-color: #1a1a1a;
+    color: #fff;
+    border-color: #1a1a1a;
+}
+
+
+/* ==========================================
+   상품 그리드 영역 (6단 구성)
+========================================== */
+.product-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 30px 100px 30px;
+}
+
+.product-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* 화면이 좁아지면 아래로 떨어지게 설정 */
+    gap: 15px;      /* 카드 사이의 일정한 간격 */
+}
+
+/* 상품 카드 개별 스타일 */
+.product-card {
+    background-color: #fff;
+    width: calc(16.66% - 15px); /* 6개가 한 줄에 들어가도록 계산 */
+    min-width: 190px;          /* 너무 좁아지지 않도록 하한선 설정 */
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02); /* 미세한 그림자 효과 */
+}
+
+.product-img-box {
+    width: 100%;
+    background-color: #fcfcfc;
+}
+
+.product-img-box img {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    object-fit: cover;
+    display: block;
+}
+
+.product-info {
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1; /* 카드 내용 높이가 달라도 하단 라인이 맞도록 밀어줌 */
+}
+
+/* 무드 태그 배지들 */
+.badge-elegant, .badge-fresh, .badge-cozy {
+    font-size: 0.55rem;
+    padding: 2px 10px;
+    border-radius: 10px;
+    letter-spacing: 0.05em;
+    margin-bottom: 12px;
+}
+.badge-elegant { background-color: #f0ece6; color: #8a7b66; }
+.badge-fresh { background-color: #e6edf0; color: #667c8a; }
+.badge-cozy { background-color: #f0e6e6; color: #8a6666; }
+
+.brand-name {
+    font-size: 0.6rem;
+    color: #999;
+    letter-spacing: 0.1em;
+    margin: 0 0 4px 0;
+}
+
+.item-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin: 0 0 12px 0;
+}
+
+.item-quote {
+    font-size: 0.7rem;
+    color: #666;
+    margin: 0 0 12px 0;
+    word-break: keep-all;
+    font-style: italic;
+}
+
+.item-notes {
+    font-size: 0.6rem;
+    color: #999;
+    margin: 0 0 20px 0;
+}
+
+/* 하단 가격 및 링크 라인 */
+.card-footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto; /* 내용 영역의 가장 아래쪽으로 밀착 */
+    padding-top: 10px;
+    border-top: 1px solid #f5f5f5;
+}
+
+.price {
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.shop-now {
+    text-decoration: underline;
+    color: #000;
+    font-size: 0.65rem;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+}
+
+
+/* ==========================================
+   모바일 반응형 처리
+========================================== */
+@media (max-width: 1200px) {
+    .product-card {
+        width: calc(33.33% - 15px); /* 화면이 좁아지면 한 줄에 3개씩 분할 */
+    }
+}
+
+@media (max-width: 600px) {
+    .vibe-buttons {
+        flex-wrap: wrap; /* 버튼이 넘치면 아랫줄로 */
+    }
+    .product-card {
+        width: 100%; /* 모바일에서는 카드 한 개가 가로를 꽉 채움 */
+    }
+}

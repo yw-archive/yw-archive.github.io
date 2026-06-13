@@ -1,0 +1,422 @@
+/* ==========================================
+   기본 초기화 및 글로벌 스타일
+   ========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', 'Noto Sans KR', sans-serif; 
+    background-color: #f8f7f4;
+    color: #333; 
+    line-height: 1.7;
+    /* -webkit-font-smoothing: 브라우저 글꼴의 외곽선을 부드럽게 만드는 속성 */
+    -webkit-font-smoothing: antialiased;
+    /* overflow-x: 가로 방향으로 요소가 넘칠 때 제어하는 속성 */
+    overflow-x: hidden;
+}
+
+/* ==========================================
+   네비게이션 및 상단 영역
+   ========================================== */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px; 
+    background-color: #ffffff;
+    border-bottom: none;
+    position: relative;
+}
+
+.logo {
+    color: #333;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    font-size: 1.05rem;
+    cursor: pointer;
+}
+
+.nav-brand {
+    font-family: 'Inter', serif;
+    font-size: 1.2rem;
+    letter-spacing: 0.2em;
+    color: #333;
+    text-decoration: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.menu-item {
+    text-decoration: none;
+    color: #333;
+    margin-left: 30px;
+    font-size: 0.9rem;
+    padding-bottom: 4px;
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.menu-item:hover {
+    color: #000;
+    border-bottom-color: #000; /* 진한 호버 밑줄 */
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #333;
+    margin-left: 30px; 
+    font-size: 0.9rem;
+    padding-bottom: 4px;
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.nav-menu a:hover {
+    color: #000;
+    border-bottom-color: #000;
+}
+
+.sidebar-menu {
+    position: fixed;
+    top: 0;
+    left: -300px; /* 숨김 */
+    width: 300px;
+    height: 100vh;
+    background-color: #fff;
+    padding-top: 100px;
+    transition: 0.4s ease-in-out;
+    z-index: 200;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+}
+
+.sidebar-menu a {
+    display: block;
+    padding: 15px 40px;
+    color: #333;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.category-title {
+    padding: 20px 40px;
+    font-weight: bold;
+    color: #b59d7b;
+    font-size: 0.8rem;
+}
+
+.sidebar-menu a:hover {
+    color: #000;
+    border-bottom-color: #000;
+}
+
+.sidebar-menu.open {
+    left: 0; /* 노출 */
+}
+
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2); /* 살짝 어두운 배경 (투명도 조절 가능) */
+    z-index: 150; /* 사이드바(200)보다는 낮고, 본문보다는 높게 */
+    display: none; /* 평소에는 안 보임 */
+    cursor: pointer;
+}
+
+/* 2. 사이드바가 열렸을 때 오버레이도 같이 표시 */
+.sidebar-overlay.active {
+    display: block;
+}
+
+/* ==========================================
+   배너 및 메인 타이틀 
+   ========================================== */
+   
+.layering-banner {
+    width: 100%;
+    height: 300px;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url('');
+    background-size: cover;
+    background-position: center;
+    background-color: #eae3db;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+}
+
+.subtitle-tag {
+    font-size: 0.6rem;
+    letter-spacing: 0.4em;
+    color: #b59d7b;
+    margin-bottom: 5px;
+}
+
+.main-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    font-weight: 400;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.banner-desc {
+    font-size: 0.8rem;
+    color: #666; 
+    max-width: 550px;
+    /* word-break: 텍스트 줄바꿈 방식을 결정하는 속성 */
+    word-break: keep-all;
+}
+
+/* ==========================================
+   소개글 및 갤러리 헤더
+   ========================================== */
+
+.clover-section {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 80px 50px;
+}
+
+.section-tag {
+    font-family: 'Inter', 'Noto Sans KR', sans-serif;
+    font-size: 0.75rem;                            
+    letter-spacing: 0.1em;                           
+    color: #999; 
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 400;
+    margin-bottom: 60px;
+    color: #1a1a1a;
+}
+
+/* ==========================================
+   클로버 레이아웃 컨테이너
+   ========================================== */
+
+.clover-layout-container {
+    display: grid;
+    grid-template-columns: 1fr 260px 260px 1fr;
+    gap: 14px 12px;
+    align-items: center;
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+.text-side a {
+    text-decoration: none;
+    display: block;
+    transition: transform 0.35s ease;
+}
+
+.left-side { 
+    text-align: right; 
+    padding-right: 20px; 
+}
+.right-side { 
+    text-align: left; 
+    padding-left: 20px; 
+}
+
+.season-name-outer {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: #333;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.season-desc-outer {
+    font-size: 0.95rem;
+    color: #777;
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+}
+
+.text-side:hover .season-name-outer { 
+    color: #b59d7b;
+}
+
+/* ==========================================
+   6. 네잎클로버 잎사귀 스타일 및 내부 효과
+   ========================================== */
+
+.clover-leaf {
+    position: relative;
+    width: 260px;  
+    height: 260px; 
+    /* overflow(: hidden): 자식 요소가 부모 영역을 벗어날 때 숨겨주는 속성 */
+    overflow: hidden;
+    text-decoration: none;
+    /* box-shadow: 박스 요소 자체에 그림자 효과를 부여 */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.03);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    justify-self: center;
+}
+
+.spring { border-radius: 100% 100% 0 100%; justify-self: end; }  
+.summer { border-radius: 100% 100% 100% 0; justify-self: start; } 
+.autumn { border-radius: 100% 0 100% 100%; justify-self: end; }  
+.winter { border-radius: 0 100% 100% 100%; justify-self: start; } 
+
+.leaf-bg {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-color: #eae5e1;
+    transition: transform 0.6s ease;
+}
+
+.leaf-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(51, 51, 51, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    opacity: 0; 
+    transition: opacity 0.35s ease;
+}
+
+.season-name-inner {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.35rem; 
+    color: #ffffff;
+    letter-spacing: 3px;
+    margin-bottom: 6px;
+    font-weight: 400;
+}
+.season-desc-inner {
+    font-size: 0.8rem; 
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.5;
+    margin-bottom: 12px;
+    font-weight: 300;
+}
+.view-btn-inner {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.7rem;
+    color: #ffffff;
+    border-bottom: 1px solid rgba(255,255,255,0.4);
+    padding-bottom: 1px;
+}
+
+/* ==========================================
+   인터랙션 및 호버 효과
+   ========================================== */
+
+.clover-leaf:hover {
+    /* transform{: translateY()}: 요소를 수직(Y축) 방향으로 이동시키는 효과 */
+    transform: translateY(-4px);
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.06);
+}
+.clover-leaf:hover .leaf-bg { 
+    transform: scale(1.05); 
+}
+.clover-leaf.spring:hover .leaf-overlay { 
+    opacity: 1;
+    background: rgba(139, 158, 142, 0.85); 
+}
+
+.clover-leaf.summer:hover .leaf-overlay { 
+    opacity: 1;
+    background: rgba(140, 168, 179, 0.85); 
+}
+
+.clover-leaf.autumn:hover .leaf-overlay { 
+    opacity: 1;
+    background: rgba(179, 154, 140, 0.85); 
+}
+
+.clover-leaf.winter:hover .leaf-overlay { 
+    opacity: 1;
+    background: rgba(140, 144, 150, 0.85); 
+}
+
+/* ==========================================
+   8. 반응형 레이아웃
+   ========================================== */
+
+@media (max-width: 900px) {
+    .clover-layout-container {
+        grid-template-columns: repeat(2, 200px);
+        justify-content: center;
+        gap: 12px; 
+    }
+    
+    .text-side {
+        display: none; 
+    }
+    
+    .clover-leaf {
+        width: 200px;  
+        height: 200px;
+    }
+
+    .spring, .autumn, .summer, .winter { 
+        justify-self: center; 
+    }
+
+    .clover-leaf:hover .leaf-overlay,
+    .clover-leaf:active .leaf-overlay {
+        opacity: 1;
+    }
+    
+    .season-name-inner {
+        font-size: 1.05rem; 
+        margin-bottom: 4px;
+    }
+    .season-desc-inner {
+        font-size: 0.65rem; 
+        line-height: 1.3;
+        margin-bottom: 8px;
+    }
+    .view-btn-inner {
+        font-size: 0.58rem;
+    }
+
+    .clover-leaf:active {
+        /* transform: scale(): 요소를 지정한 배율로 크기를 변형하는 효과 */
+        transform: scale(0.97);
+        transition: transform 0.1s ease;
+    }
+}
+
+@media (max-width: 400px) {
+    .clover-layout-container {
+        grid-template-columns: repeat(2, 140px);
+        gap: 8px;
+    }
+    .clover-leaf {
+        width: 140px;
+        height: 140px;
+    }
+}
