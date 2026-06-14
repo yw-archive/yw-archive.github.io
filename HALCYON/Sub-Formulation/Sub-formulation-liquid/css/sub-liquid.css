@@ -326,6 +326,12 @@ body {
     }
 }
 
+@media (max-width: 850px) {
+    .menu {
+        display: none;
+    }
+}
+
 /* 6. 푸터 */
 .footer {
     text-align: center;

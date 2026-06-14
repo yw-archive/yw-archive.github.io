@@ -317,10 +317,12 @@ body {
    모바일 반응형 무너짐 방지 기초 코드
 ========================================== */
 @media (max-width: 850px) {
+    .menu {
+        display: none;
+    }
     .step-container, .essence-container {
         flex-direction: column; /* 가로 배열을 세로 배열로 변경 */
         gap: 40px;
-        
     }
     .step-card, .essence-text-box, .essence-img-box {
         width: 90%; /* 너비를 한 줄 전체로 채우기 */

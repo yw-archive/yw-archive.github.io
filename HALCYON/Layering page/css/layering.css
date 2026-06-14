@@ -432,3 +432,9 @@ body {
         height: 140px;
     }
 }
+
+@media (max-width: 850px) {
+    .nav-menu {
+        display: none;
+    }
+}

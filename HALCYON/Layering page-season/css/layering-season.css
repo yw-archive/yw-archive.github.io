@@ -488,3 +488,9 @@ body {
         font-size: 14px;
     }
 }
+
+@media (max-width: 850px) {
+    .nav-menu {
+        display: none;
+    }
+}

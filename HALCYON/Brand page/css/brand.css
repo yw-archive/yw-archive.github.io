@@ -359,7 +359,6 @@ body {
 /* ==========================================
    화면 크기별 레이아웃 최적화 
    ========================================== */
-
 @media (max-width: 1200px) {
     .brand-grid {
         gap: 40px 24px;
@@ -390,5 +389,11 @@ body {
     }
     .brand-card {
         width: 100%; 
+    }
+}
+
+@media (max-width: 850px) {
+    .nav-menu {
+        display: none;
     }
 }
