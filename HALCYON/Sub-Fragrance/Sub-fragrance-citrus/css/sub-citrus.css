@@ -325,3 +325,11 @@ body {
         width: 100%; /* 모바일에서는 카드 한 개가 가로를 꽉 채움 */
     }
 }
+
+/* 6. 푸터 */
+.footer {
+    text-align: center;
+    padding: 50px 0;
+    font-size: 0.7rem;
+    color: #ccc;
+}
