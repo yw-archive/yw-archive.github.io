@@ -397,6 +397,18 @@ body {
     box-shadow: 0 8px 20px rgba(181, 157, 123, 0.25);
 }
 
+.footer {
+    padding: 40px 0;
+    text-align: center;
+    border-top: 1px solid #f1eeeb;
+}
+
+.footer-text {
+    font-size: 0.75rem;
+    color: #bbb;
+    letter-spacing: 0.1em;
+}
+
 /* ==========================================
    반응형 레이아웃
    ========================================== */
