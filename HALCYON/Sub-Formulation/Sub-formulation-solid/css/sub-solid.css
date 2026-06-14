@@ -120,7 +120,7 @@ body {
     height: 280px;
     /* 대리석 패턴 배경 이미지를 넣으시려면 아래 url 속성에 넣으세요 */
     background-color: #eae3db; 
-    background-image: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)), url('../img/Sub.jpg'); 
+    background-image: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)), url('../img/배너\ 이미지.jpg'); 
     background-size: cover;
     background-position: center;
     display: flex;
