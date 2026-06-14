@@ -118,7 +118,7 @@ body {
     height: 300px;
     background-color: #eae3db;
     /* 실무 팁: 투명한 흰색 레이어를 씌워 대리석 무늬 배경 위 글씨가 잘 보이게 처리 */
-    background-image: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)), url('../img/About.jpg');
+    background-image: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)), url('../image/배너\ 이미지.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
